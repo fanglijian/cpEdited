@@ -64,7 +64,9 @@ if __name__ == '__main__':
         if len(ll) != 2:
             continue
         fp = ll[1]
-        dl = fp.split(os.path.sep)
+        dl = fp.split(r'/')
+        if len(dl) == 0:
+            dl = fp.split(r'\\')
         if len(dl) > 1:
             cd = _OUT_DIR
             for i in range(len(dl) - 1):
